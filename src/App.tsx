@@ -60,7 +60,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { Student, Category, Level } from './types';
 
-const STORAGE_KEY = 'exploradores_db_v3';
+const STORAGE_KEY = 'exploradores_db_v4';
 const CALENDAR_STORAGE_KEY = 'exploradores_calendar_v1';
 const SETTINGS_STORAGE_KEY = 'exploradores_settings_v1';
 const POINT_SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3';
@@ -68,23 +68,26 @@ const POINT_SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2019/2019-p
 type View = 'dashboard' | 'class' | 'reports' | 'performance' | 'calendar' | 'settings';
 
 const INITIAL_STUDENTS: Student[] = [
-  { id: 1, name: "Adrian de Lara Fernandes", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 2, name: "Alexandre Santos Fermino", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 3, name: "Arthur de Ramos Hoffmann", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 4, name: "Beatriz Vitória da Silva Nascimento", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 5, name: "Benjamin Goncalves", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 6, name: "Brayan Lucca Delgado Alves", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 7, name: "Davi Lima Braido", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 8, name: "Davi Marques Naida", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 9, name: "Heitor Emanuel Gomes dos Santos", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 10, name: "Kassia Heloisa Marins Catira de Oliveira", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 11, name: "Laura Olivio de Lima", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 12, name: "Livia Maria Paiva Proenca", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 13, name: "Livia Massano do Amaral", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 14, name: "Lorenzo Emanoel Quevedo Carneiro", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 15, name: "Nicoly Gabriely Ferreira Cardoso da Trindade", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 16, name: "Rafael Dias Kirach", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
-  { id: 17, name: "Yzamarah de Lima Souza", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 1, name: "ALEXANDRE GUIMARAES LEAL", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 2, name: "ANELLIZE VITORIA DE OLIVEIRA PIRES", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 3, name: "BRENNER DERR DEMENJON", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 4, name: "CLAUDEMAR RAFAEL RIBEIRO DE LIMA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 5, name: "EMILY SOFIA CASTRO LOPES", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 6, name: "GABRIEL BARBOSA MOREIRA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 7, name: "GUSTAVO LUZ HANEMANN DA SILVA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 8, name: "HELLOA DA SILVA SACHUK", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 9, name: "HUGO GABRIEL MOISES GONÇALVES", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 10, name: "ITALO EDILSON DE CAMARGO BARROSO", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 11, name: "KARLLA CRUZ LIMA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 12, name: "LARISSA VITORIA LOPES BATISTA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 13, name: "MARCOS ANTONIO DOS SANTOS PEREIRA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 14, name: "MARIANE FELIX RIBEIRO", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 15, name: "MARIA VITÓRIA CAMARGO MIRANDA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 16, name: "MATHEUS APARECIDO GONCALVES MENDES", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 17, name: "PABLO DOS SANTOS NASCIMENTO TRINDADE", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 18, name: "PEDRO EDUARDO SOUZA SALUSTIANO", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 19, name: "RENE CORREIA DE LIMA SILVA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
+  { id: 20, name: "SAMUEL FELIPE SILVA DE OLIVEIRA", points: 0, categories: { 'Organização': 0, 'Disciplina': 0, 'Desempenho': 0 }, attendance: [format(new Date(), 'yyyy-MM-dd')] },
 ];
 
 export default function App() {
